@@ -1,0 +1,78 @@
+#######################################
+# Syntax Coloring Map For FSM
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+FSM	KEYWORD1
+FsmUpdatable	KEYWORD1
+FsmState	KEYWORD1
+FsmCollection	KEYWORD1
+FsmSequence	KEYWORD1
+FsmDelay	KEYWORD1
+FsmStartTimer	KEYWORD1
+FsmWaitUntilTimerIsComplete	KEYWORD1
+FsmFinish	KEYWORD1
+FsmBranchOnEndOfList	KEYWORD1
+FsmDebugPrint	KEYWORD1
+    
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+#FsmUpdatable
+update	KEYWORD2
+setParent	KEYWORD2
+
+#FsmState
+_enterState	KEYWORD2
+_updateState	KEYWORD2
+_exitState	KEYWORD2
+_leaveState	KEYWORD2
+_transitionAncestorTo	KEYWORD2
+_transitionAncestorToNext	KEYWORD2
+_transitionAncestorToPrevious	KEYWORD2
+_transitionAncestorToStart	KEYWORD2
+_markAsLeaving	KEYWORD2
+
+#FsmCollection
+addChild	KEYWORD2
+
+#FsmSequence
+_enterState	KEYWORD2
+_updateState	KEYWORD2
+_exitState	KEYWORD2
+_transitionTo	KEYWORD2
+_transitionToNext	KEYWORD2
+_transitionToPrevious	KEYWORD2
+_transitionToStart	KEYWORD2
+transitionAncestorTo	KEYWORD2
+transitionAncestorToNext	KEYWORD2
+transitionAncestorToPrevious	KEYWORD2
+transitionAncestorToStart	KEYWORD2
+
+#FsmDelay
+_enterState	KEYWORD2
+_updateState	KEYWORD2
+
+#FsmStartTimer
+_enterState	KEYWORD2
+
+#FsmWaitUntilTimerIsComplete
+_updateState	KEYWORD2
+
+#FsmFinish
+_enterState	KEYWORD2
+
+#FsmBranchOnEndOfList
+_enterState	KEYWORD2
+
+#FsmDebugPrint
+_enterState	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
