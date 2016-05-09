@@ -118,14 +118,8 @@ void FsmState::update() {
   }
   
   _updateState();
-
-  //Serial.println(name);
-  //Serial.println(F("Checking if should leave"));
-
   
   if (_leaving) {
-    //Serial.println(name);
-    //Serial.println(F("Leaving state state"));
     _leaveState();
   }
   
@@ -464,9 +458,6 @@ void FsmSelectStateFromCondition::_updateState() {
   //Serial.print(name);
   Serial.println(F(" #Entered FsmSelectStateFromCondition::_updateState"));
 #endif
-//  Serial.println(F(" #Entered FsmSelectStateFromCondition::_updateState"));
-//  Serial.print(F("condition is "));
-//  Serial.println(_value->getValue());
   
   if (_oldValue != _value->getValue()) {
     _oldValue = _value->getValue();
