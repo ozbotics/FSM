@@ -12,7 +12,7 @@
 #include <Condition.h>
 #include <Enumerator.h>
 
-typedef unsigned long Duration;
+typedef unsigned long Duration; /**< typedef  Duration  An integer type used to represent time. Expressed in milliseconds */ 
 
 //#define DEBUG_TRACE
 
@@ -153,7 +153,6 @@ class FsmState : public FsmUpdatable {
     void _markAsLeaving();
     
   public:
-  
    /**
     * Constructor
     */
@@ -293,14 +292,11 @@ class FsmSequence : public FsmCollection {
     
    /**
     * request that focused child state forceExit
-    *
-    * @return nothing
     */
     virtual void _forceDescendantsToExit();
 
 
   public:
-  
    /**
     * Constructor
     *
@@ -329,6 +325,7 @@ class FsmSequence : public FsmCollection {
     * make request to leave state by requesting that an Ancestor (usually the Parent) move its focus to the next state
     *  called from within _updateState()
     *
+    * @param childInd The is of the target state
     * @param depth The number of ancestor hops (parent=1)
     */
     void transitionAncestorTo(byte childInd, byte depth);
@@ -440,7 +437,6 @@ class FsmStartTimer : public FsmState {
     virtual void _enterState();
     
   public:
-  
    /**
     * Constructor
     *
@@ -552,6 +548,7 @@ class FsmFinishOnEndOfList : public FsmState {
     * Constructor
     *
     * @param enumerator The Enumerator used to traverse a List
+    * @param branchInd The id of the state to branch to
     */  
     FsmFinishOnEndOfList(EnumeratorBase* enumerator, byte branchInd=0) : _enumerator(enumerator), FsmState() {}
 };
@@ -577,7 +574,6 @@ class FsmBranchOnConditionFalse : public FsmState {
   public:
    /**
     * Constructor
-    *
     *
     * @todo - is there a better way to do this than using 'Pointer to Pointer to Condition'
     *   note: it is this way because I needed to change the Condition at runtime
@@ -678,6 +674,14 @@ class FsmIdle : public FsmState {
 
 /* --------------------------------------------------------------------------------------- */
 
+/**
+ * DebugState
+ *
+ * FSMs that need to provide diagnostic output about state changes forced externally can use 'FsmDebugState'
+ *  to send messages to Serial on Enter & Exit of this DebugState 
+ *
+ * FsmDebugState(s) are typically used with 'FsmSelectStateFromCondition'
+ */
 class FsmDebugState : public FsmState {
   protected:
     String* _msg;  /**< protected variable _msg Pointer to message String */
