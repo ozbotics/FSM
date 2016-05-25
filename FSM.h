@@ -12,7 +12,6 @@
 #include <Condition.h>
 #include <Enumerator.h>
 
-typedef unsigned long Duration; /**< typedef  Duration  An integer type used to represent time. Expressed in milliseconds */ 
 
 //#define DEBUG_TRACE
 
